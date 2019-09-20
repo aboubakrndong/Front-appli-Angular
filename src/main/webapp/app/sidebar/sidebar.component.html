@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+
+<!-- code des symbole et bouton side bar -->
+
+<nav class="navbar navbar-expand-lg navbar-light btn-success">
+
+    <!-- debut code symbole sidebar  -->
+
+    <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">swap_horizontal_circle
+        </mat-icon>
+    </button>
+    <!-- fin code symbole sidebar-->
+
+
+<!-- debut code bouton date et rechercher-->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"> </ul>
+
+            <mat-form-field color="accent">
+                <input  matInput [matDatepicker]="picker1" placeholder="Choisissez date de début">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field color="warn">
+                <input matInput [matDatepicker]="picker2" placeholder=" Choisissez date de fin ">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+
+            <button class="btn btn-primary my-2 my-sm-0" type="submit">Rechercher </button>
+
+    </div>
+    <!-- fin code bouton date et rechercher-->
+</nav>
+
+
+<!-- fin code des symbole et bouton side bar -->
+
+
+
+<!-- debut code afficher infos sur le side nav-->
+
+<mat-sidenav-container class="sidenav-container">
+
+
+    <mat-sidenav #drawer mode="over"  opened="false" role="navigation" class="sidenav" fixedInViewport>
+        <mat-toolbar>Choisissez une zone</mat-toolbar>
+
+        <mat-form-field>
+            <h5><strong> <mat-label>Zone: </mat-label></strong></h5>
+            <mat-select [(value)]="selectedValue" (selectionChange)="getZoneById($event)">
+                <mat-option *ngFor="let zone of listzone" value="{{ zone.id }}">{{ zone.nomzone }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <div *ngIf="selectedValue">
+
+            <strong><h4><p class="text-info"><u>Informations de la zone </u></p></h4></strong>
+
+            <!-- code du tableau-->
+            <cdk-virtual-scroll-viewport itemSize="100" class="container" >
+                <table id="contentToConvert">
+                <ul class="list-group">
+                    <li class="list-group-item"> <strong>Nom Zone:</strong> {{ zone?.nomzone}}</li>
+                    <li class="list-group-item"> <strong>Couverture: </strong> {{ zone?.couverture}}</li>
+                    <li class="list-group-item"> <strong>Population:</strong> {{ zone?.population}}</li>
+                    <li class="list-group-item"> <strong>Cadastre: </strong>{{ zone?.cadastre}}</li>
+                    <li class="list-group-item"> <strong>BTS: </strong>
+                        <ul *ngFor="let bts of zone.bts">
+                            <li> Etat: {{ bts.etat}}</li>
+                            <li> Puissance: {{ bts.puissance}}</li>
+                        </ul>
+                    </li>
+                </ul>
+                </table>
+            </cdk-virtual-scroll-viewport>
+                        <p></p>
+<!--
+                     <button (click)="deleteZone($event)"> supprimer </button>
+
+
+                       <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'plus'"></fa-icon>
+                            <span class="d-none d-md-inline">Creerzone</span>
+                        </button> -->
+
+            <button [routerLink]="['/editzone']" class="btn btn-info btn-sm">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                <span class="d-none d-md-inline">editzone</span>
+            </button>
+
+
+                       <button class="btn btn-success btn-sm"
+                            (click)="ConvertDataToPdf()">
+                           <div>
+                               <i class="fa fa-download fa-2x"></i> </div>
+                            <span class="d-none d-md-inline">Telecharger</span>
+                        </button>
+
+                      <!-- <button class="btn btn-primary btn-sm"
+                            (click)="ShareData()">
+                          <div>
+                             <i class="fa fa-share-alt-square fa-2x"></i> </div>
+                           <span class="d-none d-md-inline">Partager</span>
+                       </button>-->
+
+
+            <button class="btn btn-primary btn-sm"
+                    (click)="OpenDialog()">
+                <div>
+                    <i class="fa fa-share-alt-square fa-2x"></i> </div>
+                <span class="d-none d-md-inline">mesPartao</span>
+            </button>
+
+            <div style="margin-top: 135px"> <button [routerLink]="['/createalerte']" class="btn btn-primary btn-sm">
+                <fa-icon [icon]="'plus'"></fa-icon>
+                <span class="d-none d-md-inline">CreerAlertes</span>
+            </button> </div>
+
+        </div>
+        <!-- fin code tableau-->
+    </mat-sidenav>
+
+
+    <!-- fin code afficher infos sur le side nav-->
+
+</mat-sidenav-container>
+
+<!--fin code du side nav -->
