@@ -47,11 +47,21 @@
 
 <!-- debut code afficher infos sur le side nav-->
 
+
+
 <mat-sidenav-container class="sidenav-container">
 
 
     <mat-sidenav #drawer mode="over"  opened="false" role="navigation" class="sidenav" fixedInViewport>
+        <div style="margin-left: 250px">
+        <button class="btn btn-danger btn-sm"
+                (click)="drawer.close()">
+            <span>Fermer&times;</span>
+        </button></div>
+
         <mat-toolbar>Choisissez une zone</mat-toolbar>
+
+        <div style="margin-left: 40px">
 
         <mat-form-field>
             <h5><strong> <mat-label>Zone: </mat-label></strong></h5>
@@ -59,6 +69,8 @@
                 <mat-option *ngFor="let zone of listzone" value="{{ zone.id }}">{{ zone.nomzone }}</mat-option>
             </mat-select>
         </mat-form-field>
+
+        </div>
 
         <div *ngIf="selectedValue">
 
@@ -104,25 +116,18 @@
                             <span class="d-none d-md-inline">Telecharger</span>
                         </button>
 
-                      <!-- <button class="btn btn-primary btn-sm"
-                            (click)="ShareData()">
-                          <div>
-                             <i class="fa fa-share-alt-square fa-2x"></i> </div>
-                           <span class="d-none d-md-inline">Partager</span>
-                       </button>-->
-
 
             <button class="btn btn-primary btn-sm"
-                    (click)="OpenDialog()">
+                    (click)="ShareData()">
                 <div>
                     <i class="fa fa-share-alt-square fa-2x"></i> </div>
-                <span class="d-none d-md-inline">mesPartao</span>
+                <span class="d-none d-md-inline">Partager</span>
             </button>
 
-            <div style="margin-top: 135px"> <button [routerLink]="['/createalerte']" class="btn btn-primary btn-sm">
+            <!--<div style="margin-top: 135px"> <button [routerLink]="['/createalerte']" class="btn btn-primary btn-sm">
                 <fa-icon [icon]="'plus'"></fa-icon>
                 <span class="d-none d-md-inline">CreerAlertes</span>
-            </button> </div>
+            </button> </div>-->
 
         </div>
         <!-- fin code tableau-->

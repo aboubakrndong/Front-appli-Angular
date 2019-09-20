@@ -95,16 +95,10 @@ ConvertDataToPdf ()
 
 }
 
- /* ShareData() {
-    const modalRef: NgbModalRef = this.modalService.open(PopupComponent, { windowClass: 'create-modal'});
-    modalRef.componentInstance.zone = this.zone;
-  }*/
-
-  OpenDialog(){
+  ShareData(){
     const modalRef: NgbModalRef = this.modalService.open(PopupComponent, { windowClass: 'create-modal'});
     modalRef.componentInstance.zone = this.zone;
 
-   // this.dialog.open(PopupComponent);
   }
 
 }
