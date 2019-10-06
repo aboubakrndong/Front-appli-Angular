@@ -21,7 +21,7 @@ import * as moment from 'moment';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {SidebarComponent} from './sidebar/sidebar.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatButtonModule, MatSort } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -83,8 +83,7 @@ import { PopupComponent } from './popup/popup.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CreatealerteComponent } from './createalerte/createalerte.component';
 import { EnvoismsComponent } from './envoisms/envoisms.component';
-
-
+import { BtsComponent } from './bts/bts.component';
 
 @NgModule({
   imports: [
@@ -187,8 +186,7 @@ import { EnvoismsComponent } from './envoisms/envoisms.component';
     PopupComponent,
     CreatealerteComponent,
     EnvoismsComponent,
-
-
+    BtsComponent
   ],
   providers: [
     {

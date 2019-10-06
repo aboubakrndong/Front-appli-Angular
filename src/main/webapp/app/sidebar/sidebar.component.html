@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
-
 <!-- code des symbole et bouton side bar -->
 
 <nav class="navbar navbar-expand-lg navbar-light btn-success">
@@ -53,13 +52,16 @@
 
 
     <mat-sidenav #drawer mode="over"  opened="false" role="navigation" class="sidenav" fixedInViewport>
-        <div style="margin-left: 250px">
-        <button class="btn btn-danger btn-sm"
-                (click)="drawer.close()">
-            <span>Fermer&times;</span>
-        </button></div>
 
-        <mat-toolbar>Choisissez une zone</mat-toolbar>
+        <div style="border: 1px solid">
+        <mat-toolbar>Choisissez une zone
+            <div style="margin-left: 30px">
+            <button class="btn btn-danger btn-sm"
+                    (click)="drawer.close()">
+                <span>Fermer&times;</span>
+            </button></div>
+        </mat-toolbar>
+        </div>
 
         <div style="margin-left: 40px">
 
@@ -77,57 +79,58 @@
             <strong><h4><p class="text-info"><u>Informations de la zone </u></p></h4></strong>
 
             <!-- code du tableau-->
-            <cdk-virtual-scroll-viewport itemSize="100" class="container" >
+            <cdk-virtual-scroll-viewport itemSize="50" class="container" >
                 <table id="contentToConvert">
                 <ul class="list-group">
                     <li class="list-group-item"> <strong>Nom Zone:</strong> {{ zone?.nomzone}}</li>
                     <li class="list-group-item"> <strong>Couverture: </strong> {{ zone?.couverture}}</li>
                     <li class="list-group-item"> <strong>Population:</strong> {{ zone?.population}}</li>
                     <li class="list-group-item"> <strong>Cadastre: </strong>{{ zone?.cadastre}}</li>
-                    <li class="list-group-item"> <strong>BTS: </strong>
-                        <ul *ngFor="let bts of zone.bts">
-                            <li> Etat: {{ bts.etat}}</li>
-                            <li> Puissance: {{ bts.puissance}}</li>
-                        </ul>
-                    </li>
                 </ul>
                 </table>
             </cdk-virtual-scroll-viewport>
                         <p></p>
-<!--
-                     <button (click)="deleteZone($event)"> supprimer </button>
 
 
-                       <button [routerLink]="['/createzone']" class="btn btn-primary btn-sm">
-                            <fa-icon [icon]="'plus'"></fa-icon>
-                            <span class="d-none d-md-inline">Creerzone</span>
-                        </button> -->
-
-            <button [routerLink]="['/editzone']" class="btn btn-info btn-sm">
-                <fa-icon [icon]="'pencil-alt'"></fa-icon>
-                <span class="d-none d-md-inline">editzone</span>
-            </button>
+                        <button [routerLink]="['/editzone']" class="btn btn-info btn-sm">
+                             <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Modifier</span>
+                         </button>
 
 
                        <button class="btn btn-success btn-sm"
                             (click)="ConvertDataToPdf()">
-                           <div>
-                               <i class="fa fa-download fa-2x"></i> </div>
+                               <i class="fa fa-download fa-lg"></i>
                             <span class="d-none d-md-inline">Telecharger</span>
                         </button>
 
 
             <button class="btn btn-primary btn-sm"
                     (click)="ShareData()">
-                <div>
-                    <i class="fa fa-share-alt-square fa-2x"></i> </div>
+                    <i class="fa fa-share-alt-square fa-lg "></i>
                 <span class="d-none d-md-inline">Partager</span>
             </button>
 
-            <!--<div style="margin-top: 135px"> <button [routerLink]="['/createalerte']" class="btn btn-primary btn-sm">
-                <fa-icon [icon]="'plus'"></fa-icon>
-                <span class="d-none d-md-inline">CreerAlertes</span>
-            </button> </div>-->
+
+            <div style="margin-top: 135px">
+
+                <button class="btn btn-warning btn-sm"
+                        (click)="SendAlert()">
+                    <i class="fa fa-exclamation-triangle fa-lg "></i>
+                    <span class="d-none d-md-inline">Alerte</span>
+                </button>
+
+                <button class="btn btn-secondary btn-sm"
+                             (click)="AffichBTS()" )>
+                    <i class="fa fa-broadcast-tower fa-lg "></i>
+                     <span class="d-none d-md-inline">BTS</span>
+                  </button>
+
+                  <button [routerLink]="['/kpi']" class="btn btn-primary btn-sm">
+                      <i class="fa fa-chart-bar fa-lg "></i>
+                     <span class="d-none d-md-inline">KPI</span>
+                  </button>
+        </div>
 
         </div>
         <!-- fin code tableau-->
