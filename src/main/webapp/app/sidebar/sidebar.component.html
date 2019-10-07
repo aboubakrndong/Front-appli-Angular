@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/5.11.2/css/font-awesome.min.css"/>
 
 <!-- code des symbole et bouton side bar -->
 
@@ -116,26 +117,24 @@
 
                 <button class="btn btn-warning btn-sm"
                         (click)="SendAlert()">
-                    <i class="fa fa-exclamation-triangle fa-lg "></i>
-                    <span class="d-none d-md-inline">Alerte</span>
+                    <h6>  <i class="fa fa-exclamation-triangle fa-lg "></i>
+                    <span class="d-none d-md-inline">Alerte</span></h6>
                 </button>
-
+                &nbsp;&nbsp;&nbsp;
                 <button class="btn btn-secondary btn-sm"
-                             (click)="AffichBTS()" )>
-                    <i class="fa fa-broadcast-tower fa-lg "></i>
-                     <span class="d-none d-md-inline">BTS</span>
+                             (click)="AffichBTS()">
+                    <h6> <i class="fa fa-signal fa-lg "></i>
+                        <span class="d-none d-md-inline">BTS</span></h6>
                   </button>
-
-                  <button [routerLink]="['/kpi']" class="btn btn-primary btn-sm">
-                      <i class="fa fa-chart-bar fa-lg "></i>
-                     <span class="d-none d-md-inline">KPI</span>
+                     &nbsp;&nbsp;&nbsp;
+                  <button [routerLink]="['/kpi']" class="btn btn-info btn-lights">
+                      <h6> <i class="fa fa-chart-line  fa-lg "></i>
+                          <span class="d-none d-md-inline">KPI</span></h6>
                   </button>
-        </div>
-
+          </div>
         </div>
         <!-- fin code tableau-->
     </mat-sidenav>
-
 
     <!-- fin code afficher infos sur le side nav-->
 

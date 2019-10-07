@@ -83,7 +83,7 @@ import { PopupComponent } from './popup/popup.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CreatealerteComponent } from './createalerte/createalerte.component';
 import { EnvoismsComponent } from './envoisms/envoisms.component';
-import { BtsComponent } from './bts/bts.component';
+import { VuebtsComponent } from './vuebts/vuebts.component';
 
 @NgModule({
   imports: [
@@ -186,7 +186,8 @@ import { BtsComponent } from './bts/bts.component';
     PopupComponent,
     CreatealerteComponent,
     EnvoismsComponent,
-    BtsComponent
+    VuebtsComponent,
+
   ],
   providers: [
     {

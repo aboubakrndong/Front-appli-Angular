@@ -16,6 +16,7 @@ import { PopupComponent } from 'app/popup/popup.component';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EnvoismsComponent } from 'app/envoisms/envoisms.component';
 import { BtsComponent } from 'app/entities/bts';
+import {VuebtsComponent} from "app/vuebts/vuebts.component";
 
 export interface PeriodicElement {
   id?: number;
@@ -41,7 +42,7 @@ export class SidebarComponent implements OnInit {
   displayedColumns: string[] = ['nomzone', 'couverture', 'cadastre', 'population'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
-  constructor(public dialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) {}
+  constructor(public dialog: MatDialog,public undialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.listzone = new Array<IZones>();
@@ -70,12 +71,6 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  deleteZone(event: any) {
-    this.zoneService.delete(this.selectedValue).subscribe(zone => {
-      console.log(zone);
-      this.zone = zone.body;
-    });
-  }
 
   ConvertDataToPdf() {
     var data = document.getElementById('contentToConvert');
@@ -106,9 +101,9 @@ export class SidebarComponent implements OnInit {
   }
 
   AffichBTS() {
-    const btsRef = this.dialog.open(BtsComponent, {
-      width: '450px',
-      height: '350px'
+    const btsRef = this.undialog.open(VuebtsComponent, {
+      width: '850px',
+      height: '750px',
     });
   }
 }

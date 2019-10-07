@@ -4,7 +4,7 @@ import { JhiEventManager } from 'ng-jhipster';
 
 import { MainNavComponent } from 'app/main-nav/main-nav.component';
 import { LoginModalService, AccountService, Account } from 'app/core';
-import { MapMouseEvent, Map } from 'mapbox-gl';
+import {MapMouseEvent, Map, Layer} from 'mapbox-gl';
 
 
 @Component({
@@ -13,44 +13,78 @@ import { MapMouseEvent, Map } from 'mapbox-gl';
   styleUrls: ['home.scss']
 })
 export class HomeComponent implements OnInit {
+  earthquakes: object;
+  earthquakesor: object;
+  earthquakesro: object;
+  clusterLayers: Layer[];
+  clusterLayersor: Layer[];
+  clusterLayersro: Layer[];
 
-  layerId = 'basic';
+  layerId = 'dark';
   style: string;
-
-
   account: Account;
   modalRef: NgbModalRef;
 
-  constructor(
-    private accountService: AccountService,
-    private loginModalService: LoginModalService,
-    private eventManager: JhiEventManager
-  ) {}
+  constructor(private accountService: AccountService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+
+    //debut code des couleurs sur la map(vert)
+
+    this.earthquakes = await import('./vert.geo.json');
+    const layersData: [number, string][] = [
+      [200, 'green']
+    ];
+    this.clusterLayers = layersData.map((data, index) => ({
+      id: `cluster-${index}`,
+      paint: {
+        'circle-color': data[1],
+        'circle-radius': 70,
+        'circle-blur': 1
+      }
+
+    }));
+
+//fin code du vert sur la map
+
+    //debut code orange
+    this.earthquakesor = await import('./orange.geo.json');
+    const layersDataor: [number, string][] = [
+      [200, 'orange']
+    ];
+    this.clusterLayersor = layersDataor.map((dataor, indexor) => ({
+      id: `cluster-${indexor}`,
+      paint: {
+        'circle-color': dataor[1],
+        'circle-radius': 70,
+        'circle-blur': 1
+      },
+    }));
+
+    //fin code orange
+
+
+    // debut code du rouge
+
+    this.earthquakesro = await import('./rouge.geo.json');
+    const layersDataro: [number, string][] = [
+      [200, 'red']
+    ];
+    this.clusterLayersro = layersDataro.map((dataro, indexro) => ({
+      id: `cluster-${indexro}`,
+      paint: {
+        'circle-color': dataro[1],
+        'circle-radius': 70,
+        'circle-blur': 1
+      },
+    }));
+
+    //fin code du rouge
+
     this.changeStyle(this.layerId);
-
-
     this.accountService.identity().then((account: Account) => {
       this.account = account;
     });
-    this.registerAuthenticationSuccess();
-  }
-
-  registerAuthenticationSuccess() {
-    this.eventManager.subscribe('authenticationSuccess', message => {
-      this.accountService.identity().then(account => {
-        this.account = account;
-      });
-    });
-  }
-
-  isAuthenticated() {
-    return this.accountService.isAuthenticated();
-  }
-
-  login() {
-    this.modalRef = this.loginModalService.open();
   }
 
   //changer la vue
@@ -60,6 +94,5 @@ export class HomeComponent implements OnInit {
   }
 
   //fin changer la vue
-
 
 }

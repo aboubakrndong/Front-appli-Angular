@@ -1,103 +1,167 @@
-<!--
-
 <mgl-map class="mglmap"
          [style]="style"
-         [zoom]="[10]"
-         [center]="[-17.4709569, 14.7117548]"
+         [zoom]="[6]"
+         [center]="[-16.761909, 14.4682818]"
 >
+    <!-- code des boutons-->
+    
     <mgl-control mglFullscreen></mgl-control>
     <mgl-control mglNavigation></mgl-control>
+    
+    <!-- fin code des boutons-->
 
-
-
-&lt;!&ndash;Marker pour dakar &ndash;&gt;
-    <mgl-marker
-        #myMarker
-        [lngLat]="[-17.456724, 14.726945]"
-    >
-        <div
-            class="marker"
-        >
+<!-- début code des markeurs  -->
+ 
+    <!--Marker pour dakar -->
+    <mgl-marker #myMarker [lngLat]="[-17.448451, 14.714523]">
+        <div class="marker">
         </div>
     </mgl-marker>
-    <mgl-popup
-        [marker]="myMarker"
-    >
+    <mgl-popup [marker]="myMarker">
         <h3> Département de dakar !!</h3>
     </mgl-popup>
 
+    <!-- fin Marker pour dakar -->
 
-    &lt;!&ndash; fin Marker pour dakar &ndash;&gt;
-
-
-    &lt;!&ndash;Marker pour rufisque &ndash;&gt;
-    <mgl-marker
-        #myMarkerru
-        [lngLat]="[ -17.2749633, 14.7172412]"
-    >
-        <div
-            class="marker"
-        >
-
+    <!--Marker pour rufisque -->
+    <mgl-marker #myMarkerru [lngLat]="[ -17.2749633, 14.7172412]">
+        <div class="marker">
         </div>
     </mgl-marker>
-    <mgl-popup
-        [marker]="myMarkerru"
-    >
-       <h3> Département de rufisque  !! </h3>
+    <mgl-popup [marker]="myMarkerru">
+        <h3> Département de rufisque  !! </h3>
     </mgl-popup>
+    <!-- Fin Marker pour rufisque -->
 
-    &lt;!&ndash; Fin Marker pour rufisque &ndash;&gt;
+    <!--Marker pour guediawaye -->
 
-    &lt;!&ndash;Marker pour guediawaye &ndash;&gt;
-
-    <mgl-marker
-        #myMarkergue
-        [lngLat]="[-17.381287,  14.789556]"
-    >
-        <div
-            class="marker"
-        >
+    <mgl-marker #myMarkergue [lngLat]="[-17.381287,  14.789556]">
+        <div class="marker">
         </div>
     </mgl-marker>
-    <mgl-popup
-        [marker]="myMarkergue"
-    >
+    <mgl-popup [marker]="myMarkergue">
         <h3>   Département de guediawaye  !! </h3>
     </mgl-popup>
 
-    &lt;!&ndash; fin Marker pour guediawaye &ndash;&gt;
+    <!-- fin Marker pour guediawaye -->
 
-    &lt;!&ndash; Marker Pour pikine &ndash;&gt;
+    <!-- Marker Pour pikine -->
 
-    <mgl-marker
-        #myMarkerpi
-        [lngLat]="[ -17.397699 , 14.744596]"
-    >
-        <div
-            class="marker"
-        >
+    <mgl-marker #myMarkerpi [lngLat]="[ -17.397699 , 14.744596]">
+        <div class="marker">
         </div>
     </mgl-marker>
-    <mgl-popup
-        [marker]="myMarkerpi"
-    >
+    <mgl-popup [marker]="myMarkerpi">
         <h3>  Département de pikine  !!</h3>
     </mgl-popup>
 
-    &lt;!&ndash;fin Marker pour pikine&ndash;&gt;
+    <!--fin Marker pour pikine-->
+
+
+    <!-- début code couleur sur la carte  -->
+<!-- le vert -->
+    <ng-container *ngIf="earthquakes">
+        <mgl-geojson-source
+            id="earthquakes"
+            [data]="earthquakes"
+            [cluster]="true"
+            [clusterMaxZoom]="15"
+            [clusterRadius]="20"
+        ></mgl-geojson-source>
+        <mgl-layer
+            *ngFor="let layer of clusterLayers"
+            [id]="layer.id"
+            type="circle"
+            source="earthquakes"
+            [paint]="layer.paint"
+            before="waterway-label"
+        ></mgl-layer>
+        <mgl-layer
+            id="unclustered-point"
+            type="circle"
+            source="earthquakes"
+            [paint]="{
+            'circle-color': 'rgba(0,255,0,0.5)',
+            'circle-radius': 20,
+            'circle-blur': 1
+        }"
+            before="waterway-label"
+        ></mgl-layer>
+    </ng-container>
+
+    <!-- fin code le vert -->
+
+    <!-- debut code orange-->
+    <ng-container *ngIf="earthquakes">
+        <mgl-geojson-source
+            id="earthquakesor"
+            [data]="earthquakesor"
+            [cluster]="true"
+            [clusterMaxZoom]="15"
+            [clusterRadius]="20"
+        ></mgl-geojson-source>
+        <mgl-layer
+            *ngFor="let layeror of clusterLayersor"
+            [id]="layeror.id"
+            type="circle"
+            source="earthquakesor"
+            [paint]="layeror.paint"
+            before="waterway-label"
+        ></mgl-layer>
+        <mgl-layer
+            id="unclustered-pointor"
+            type="circle"
+            source="earthquakesor"
+            [paint]="{
+            'circle-color': 'rgba(100%,64.7%,0%,2)',
+            'circle-radius': 20,
+            'circle-blur': 1
+        }"
+            before="waterway-label"
+        ></mgl-layer>
+    </ng-container>
+
+    <!--fin code orange -->
+
+   <!--debut code rouge-->
+    <ng-container *ngIf="earthquakes">
+        <mgl-geojson-source
+            id="earthquakesro"
+            [data]="earthquakesro"
+            [cluster]="true"
+            [clusterMaxZoom]="15"
+            [clusterRadius]="20"
+        ></mgl-geojson-source>
+        <mgl-layer
+            *ngFor="let layerro of clusterLayersro"
+            [id]="layerro.id"
+            type="circle"
+            source="earthquakesro"
+            [paint]="layerro.paint"
+            before="waterway-label"
+        ></mgl-layer>
+        <mgl-layer
+            id="unclustered-pointro"
+            type="circle"
+            source="earthquakesro"
+            [paint]="{
+            'circle-color': 'rgba(255,0,0,0.5)',
+            'circle-radius': 20,
+            'circle-blur': 1
+        }"
+            before="waterway-label"
+        ></mgl-layer>
+    </ng-container>
+
+   <!-- fin code rouge-->
 
 </mgl-map>
 
-&lt;!&ndash;changer la vue&ndash;&gt;
+   <!-- fin code couleur sur la map-->
 
 <mat-radio-group [ngModel]="layerId" (ngModelChange)="changeStyle($event)">
     <mat-label class="labelvue">  Choisir la vue : </mat-label>
+    <mat-radio-button value="dark">dark</mat-radio-button>
     <mat-radio-button value="basic">basic</mat-radio-button>
-    <mat-radio-button value="streets">streets</mat-radio-button>
     <mat-radio-button value="satellite">satellite</mat-radio-button>
 </mat-radio-group>
-
-&lt;!&ndash;fin code pour changer la vue&ndash;&gt;
-
--->

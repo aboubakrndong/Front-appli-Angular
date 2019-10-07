@@ -20,4 +20,16 @@ Main page styles
     background: url('../../content/images/jhipster_family_member_3.svg') no-repeat center top;
     background-size: contain;
   }
+
+
+  :host {
+    display: flex;
+    flex: 1;
+  }
+  mgl-map {
+    height: 100%;
+    width: 100%;
+  }
+
+
 }
