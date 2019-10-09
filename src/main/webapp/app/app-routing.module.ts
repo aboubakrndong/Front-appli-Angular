@@ -7,6 +7,9 @@ import {PopupComponent} from "app/popup/popup.component";
 import {MainNavComponent} from "app/main-nav/main-nav.component";
 import {CreatealerteComponent} from "app/createalerte/createalerte.component";
 import {EnvoismsComponent} from "app/envoisms/envoisms.component";
+import {VuebtsComponent} from "app/vuebts/vuebts.component";
+import {VuekpiComponent} from "app/vuekpi/vuekpi.component";
+import {VueqosComponent} from "app/vueqos/vueqos.component";
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -34,6 +37,19 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
         {
           path: 'editzone',
           component: PopupComponent
+        },
+        {
+          path: 'affichbts',
+          component: VuebtsComponent
+        },
+        {
+          path:'affichkpi',
+          component:VuekpiComponent
+        },
+
+        {
+          path:'affichqos',
+          component:VueqosComponent
         },
 
 

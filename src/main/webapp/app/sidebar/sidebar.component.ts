@@ -15,8 +15,11 @@ import * as html2canvas from 'html2canvas';
 import { PopupComponent } from 'app/popup/popup.component';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EnvoismsComponent } from 'app/envoisms/envoisms.component';
-import { BtsComponent } from 'app/entities/bts';
 import {VuebtsComponent} from "app/vuebts/vuebts.component";
+
+import { BtsService} from "app/entities/bts";
+import {VuekpiComponent} from "app/vuekpi/vuekpi.component";
+import {VueqosComponent} from "app/vueqos/vueqos.component";
 
 export interface PeriodicElement {
   id?: number;
@@ -29,6 +32,7 @@ export interface PeriodicElement {
   bts?: IBts[];
 }
 
+
 @Component({
   selector: 'jhi-sidebar',
   templateUrl: './sidebar.component.html',
@@ -39,7 +43,6 @@ export class SidebarComponent implements OnInit {
   ELEMENT_DATA: PeriodicElement[];
   zone: IZones;
   selectedValue: number;
-  displayedColumns: string[] = ['nomzone', 'couverture', 'cadastre', 'population'];
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
   constructor(public dialog: MatDialog,public undialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) {}
@@ -49,7 +52,8 @@ export class SidebarComponent implements OnInit {
     this.zoneService.findAll().subscribe(liste => {
       console.log(liste.body);
       this.listzone = liste.body;
-    });
+  });
+
   }
   getZoneById(event: any) {
     this.zoneService.find(this.selectedValue).subscribe(zone => {
@@ -71,7 +75,6 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-
   ConvertDataToPdf() {
     var data = document.getElementById('contentToConvert');
     html2canvas(data).then(canvas => {
@@ -89,7 +92,7 @@ export class SidebarComponent implements OnInit {
   }
 
   ShareData() {
-    const modalRef: NgbModalRef = this.modalService.open(PopupComponent, { windowClass: 'create-modal' });
+    const modalRef: NgbModalRef = this.modalService.open(PopupComponent, { windowClass: 'create-modal',centered:true });
     modalRef.componentInstance.zone = this.zone;
   }
 
@@ -100,10 +103,16 @@ export class SidebarComponent implements OnInit {
     });
   }
 
-  AffichBTS() {
-    const btsRef = this.undialog.open(VuebtsComponent, {
-      width: '850px',
-      height: '750px',
-    });
+  AffichBts() {
+      const modalRef: NgbModalRef = this.modalService.open(VuebtsComponent, { windowClass: 'create-modal' , size:"lg"});
+      modalRef.componentInstance.zone = this.zone;
+  }
+  AffichKpi() {
+    const modalRef: NgbModalRef = this.modalService.open(VuekpiComponent, { windowClass: 'create-modal' , size:"lg"});
+    modalRef.componentInstance.zone = this.zone;
+  }
+  AffichQos() {
+    const modalRef: NgbModalRef = this.modalService.open(VueqosComponent, { windowClass: 'create-modal' , size:"lg"});
+    modalRef.componentInstance.zone = this.zone;
   }
 }

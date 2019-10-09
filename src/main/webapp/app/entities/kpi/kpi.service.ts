@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { SERVER_API_URL } from 'app/app.constants';
 import { createRequestOption } from 'app/shared';
 import { IKpi } from 'app/shared/model/kpi.model';
+import {IZones} from "app/shared/model/zones.model";
 
 type EntityResponseType = HttpResponse<IKpi>;
 type EntityArrayResponseType = HttpResponse<IKpi[]>;
@@ -35,4 +36,11 @@ export class KpiService {
   delete(id: number): Observable<HttpResponse<any>> {
     return this.http.delete<any>(`${this.resourceUrl}/${id}`, { observe: 'response' });
   }
+
+  findAll(): Observable<EntityArrayResponseType> {
+    return this.http.get<IKpi[]>(`${this.resourceUrl}`, { observe: 'response' });
+  }
+
+
+
 }

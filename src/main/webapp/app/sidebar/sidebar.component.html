@@ -21,20 +21,23 @@
 <!-- debut code bouton date et rechercher-->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto"> </ul>
-
+           <div style="margin-right: 14px">
             <mat-form-field color="accent">
                 <input  matInput [matDatepicker]="picker1" placeholder="Choisissez date de début">
                 <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
                 <mat-datepicker #picker1></mat-datepicker>
             </mat-form-field>
-
-            <mat-form-field color="warn">
+           </div>
+          <div style="margin-right: 14px; margin-left: 14px">
+              <mat-form-field color="warn">
                 <input matInput [matDatepicker]="picker2" placeholder=" Choisissez date de fin ">
                 <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
                 <mat-datepicker #picker2></mat-datepicker>
-            </mat-form-field>
-
+             </mat-form-field>
+          </div>
+        <div style="margin-left: 25px">
             <button class="btn btn-primary my-2 my-sm-0" type="submit">Rechercher </button>
+        </div>
 
     </div>
     <!-- fin code bouton date et rechercher-->
@@ -84,7 +87,7 @@
                 <table id="contentToConvert">
                 <ul class="list-group">
                     <li class="list-group-item"> <strong>Nom Zone:</strong> {{ zone?.nomzone}}</li>
-                    <li class="list-group-item"> <strong>Couverture: </strong> {{ zone?.couverture}}</li>
+                    <li class="list-group-item"> <strong>Taux de Couverture: </strong> {{ zone?.couverture}}</li>
                     <li class="list-group-item"> <strong>Population:</strong> {{ zone?.population}}</li>
                     <li class="list-group-item"> <strong>Cadastre: </strong>{{ zone?.cadastre}}</li>
                 </ul>
@@ -99,14 +102,14 @@
                          </button>
 
 
-                       <button class="btn btn-success btn-sm"
+                       <button class="btn btn-secondary btn-sm"
                             (click)="ConvertDataToPdf()">
                                <i class="fa fa-download fa-lg"></i>
                             <span class="d-none d-md-inline">Telecharger</span>
                         </button>
 
 
-            <button class="btn btn-primary btn-sm"
+            <button class="btn btn-info btn-sm"
                     (click)="ShareData()">
                     <i class="fa fa-share-alt-square fa-lg "></i>
                 <span class="d-none d-md-inline">Partager</span>
@@ -114,22 +117,25 @@
 
 
             <div style="margin-top: 135px">
-
                 <button class="btn btn-warning btn-sm"
                         (click)="SendAlert()">
-                    <h6>  <i class="fa fa-exclamation-triangle fa-lg "></i>
-                    <span class="d-none d-md-inline">Alerte</span></h6>
+                    <i class="fa fa-exclamation-triangle fa-lg "></i>
+                    <span class="d-none d-md-inline">Alerte</span>
                 </button>
-                &nbsp;&nbsp;&nbsp;
-                <button class="btn btn-secondary btn-sm"
-                             (click)="AffichBTS()">
-                    <h6> <i class="fa fa-signal fa-lg "></i>
-                        <span class="d-none d-md-inline">BTS</span></h6>
+               <button class="btn btn-secondary btn-sm"
+                             (click)="AffichBts()">
+                    <i class="fa fa-signal fa-lg "></i>
+                        <span class="d-none d-md-inline">BTS</span>
                   </button>
-                     &nbsp;&nbsp;&nbsp;
-                  <button [routerLink]="['/kpi']" class="btn btn-info btn-lights">
-                      <h6> <i class="fa fa-chart-line  fa-lg "></i>
-                          <span class="d-none d-md-inline">KPI</span></h6>
+                <button class="btn btn-success btn-sm"
+                        (click)="AffichQos()">
+                    <i class="fa fa-chart-pie fa-lg "></i>
+                    <span class="d-none d-md-inline">QOS</span>
+                </button>
+                  <button class="btn btn-primary btn-sm"
+                          (click)="AffichKpi()">
+                       <i class="fa fa-chart-line fa-lg "></i>
+                          <span class="d-none d-md-inline">KPI</span>
                   </button>
           </div>
         </div>

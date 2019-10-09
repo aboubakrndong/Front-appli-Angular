@@ -44,14 +44,4 @@ export class ZonesService {
 
   //fin de la fonction findAll
 
-
-  //fonction updatebyid
-
-  updateById(id: number, zon:any){
-
-    return this.http.put<IZones>(this.resourceUrl+"/"+id, zon, { observe: 'response' });
-
-  }
-
-
 }

@@ -84,6 +84,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CreatealerteComponent } from './createalerte/createalerte.component';
 import { EnvoismsComponent } from './envoisms/envoisms.component';
 import { VuebtsComponent } from './vuebts/vuebts.component';
+import { VuekpiComponent } from './vuekpi/vuekpi.component';
+import { VueqosComponent } from './vueqos/vueqos.component';
 
 @NgModule({
   imports: [
@@ -187,6 +189,8 @@ import { VuebtsComponent } from './vuebts/vuebts.component';
     CreatealerteComponent,
     EnvoismsComponent,
     VuebtsComponent,
+    VuekpiComponent,
+    VueqosComponent,
 
   ],
   providers: [

@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
+
+<strong><h1 class="text-success" mat-dialog-title><u>  Informations sur les indicateurs de performance(KPI)
+    <button class="fermekpi" (click)="modalService.dismissAll()">
+        Close&times;</button>
+</u></h1></strong>
+
+<div style="margin-top: 50px;margin-bottom: 50px">
+<button class="btn btn-info btn-lights"
+        (click)="getKpiById($event)">
+    <h6> <i class="fa fa-info-circle  fa-lg "></i>
+        <span class="d-none d-md-inline">Visualiser</span></h6>
+</button>
+</div>
+
+<div *ngIf="selectedValue">
+        <table id="contentToConvert">
+            <ul class="list-group">
+                <li class="list-group-item"> <strong>taux d'appels réussis : </strong>{{ kpi?.tauxdappels}}</li>
+                <li class="list-group-item"> <strong>taux d'échec d'appels :</strong> {{ kpi?.tauxderejets}}</li>
+                <li class="list-group-item"> <strong>taux d'appels non aboutis :</strong> {{ kpi?.tauxdepertes}}</li>
+
+            </ul>
+        </table>
+</div>
