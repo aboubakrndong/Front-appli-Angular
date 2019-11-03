@@ -1,65 +1,19 @@
+<!--
 <mgl-map class="mglmap"
          [style]="style"
          [zoom]="[6]"
          [center]="[-16.761909, 14.4682818]"
 >
-    <!-- code des boutons-->
+    &lt;!&ndash; code des boutons&ndash;&gt;
     
     <mgl-control mglFullscreen></mgl-control>
     <mgl-control mglNavigation></mgl-control>
     
-    <!-- fin code des boutons-->
-
-<!-- début code des markeurs  -->
- 
-    <!--Marker pour dakar -->
-    <mgl-marker #myMarker [lngLat]="[-17.448451, 14.714523]">
-        <div class="marker">
-        </div>
-    </mgl-marker>
-    <mgl-popup [marker]="myMarker">
-        <h3> Département de dakar !!</h3>
-    </mgl-popup>
-
-    <!-- fin Marker pour dakar -->
-
-    <!--Marker pour rufisque -->
-    <mgl-marker #myMarkerru [lngLat]="[ -17.2749633, 14.7172412]">
-        <div class="marker">
-        </div>
-    </mgl-marker>
-    <mgl-popup [marker]="myMarkerru">
-        <h3> Département de rufisque  !! </h3>
-    </mgl-popup>
-    <!-- Fin Marker pour rufisque -->
-
-    <!--Marker pour guediawaye -->
-
-    <mgl-marker #myMarkergue [lngLat]="[-17.381287,  14.789556]">
-        <div class="marker">
-        </div>
-    </mgl-marker>
-    <mgl-popup [marker]="myMarkergue">
-        <h3>   Département de guediawaye  !! </h3>
-    </mgl-popup>
-
-    <!-- fin Marker pour guediawaye -->
-
-    <!-- Marker Pour pikine -->
-
-    <mgl-marker #myMarkerpi [lngLat]="[ -17.397699 , 14.744596]">
-        <div class="marker">
-        </div>
-    </mgl-marker>
-    <mgl-popup [marker]="myMarkerpi">
-        <h3>  Département de pikine  !!</h3>
-    </mgl-popup>
-
-    <!--fin Marker pour pikine-->
+    &lt;!&ndash; fin code des boutons&ndash;&gt;
 
 
-    <!-- début code couleur sur la carte  -->
-<!-- le vert -->
+    &lt;!&ndash; début code couleur sur la carte  &ndash;&gt;
+&lt;!&ndash; le vert &ndash;&gt;
     <ng-container *ngIf="earthquakes">
         <mgl-geojson-source
             id="earthquakes"
@@ -89,9 +43,9 @@
         ></mgl-layer>
     </ng-container>
 
-    <!-- fin code le vert -->
+    &lt;!&ndash; fin code le vert &ndash;&gt;
 
-    <!-- debut code orange-->
+    &lt;!&ndash; debut code orange&ndash;&gt;
     <ng-container *ngIf="earthquakes">
         <mgl-geojson-source
             id="earthquakesor"
@@ -121,9 +75,9 @@
         ></mgl-layer>
     </ng-container>
 
-    <!--fin code orange -->
+    &lt;!&ndash;fin code orange &ndash;&gt;
 
-   <!--debut code rouge-->
+   &lt;!&ndash;debut code rouge&ndash;&gt;
     <ng-container *ngIf="earthquakes">
         <mgl-geojson-source
             id="earthquakesro"
@@ -153,15 +107,16 @@
         ></mgl-layer>
     </ng-container>
 
-   <!-- fin code rouge-->
+   &lt;!&ndash; fin code rouge&ndash;&gt;
 
 </mgl-map>
 
-   <!-- fin code couleur sur la map-->
+   &lt;!&ndash; fin code couleur sur la map&ndash;&gt;
 
 <mat-radio-group [ngModel]="layerId" (ngModelChange)="changeStyle($event)">
     <mat-label class="labelvue">  Choisir la vue : </mat-label>
-    <mat-radio-button value="dark">dark</mat-radio-button>
-    <mat-radio-button value="basic">basic</mat-radio-button>
-    <mat-radio-button value="satellite">satellite</mat-radio-button>
+    <mat-radio-button value="dark">Dark</mat-radio-button>
+    <mat-radio-button value="basic">Basic</mat-radio-button>
+    <mat-radio-button value="satellite">Satellite</mat-radio-button>
 </mat-radio-group>
+-->

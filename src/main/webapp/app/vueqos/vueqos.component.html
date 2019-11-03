@@ -1,13 +1,14 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
-<strong><h1 class="text-success" mat-dialog-title><u>  Informations sur la qualite de service(QOS)
-    <button class="fermeqos" (click)="modalService.dismissAll()">
-        Close&times;</button>
-</u></h1></strong>
+<div style="margin-left: 80px; ">
+    <h3> <strong>Informations sur la qualité de service</strong>
+        <button class="btn btn-outline-danger" style="margin-left: 160px;" (click)="modalService.dismissAll()">
+            &times;</button>
+    </h3>
+</div>
 
-<div style="margin-top: 50px;margin-bottom: 50px">
-
-<button class="btn btn-info btn-lights"
+<div style="margin-top: 50px;margin-bottom: 50px;width: 250px">
+<button style="margin-left: 80px" class="btn btn-info btn-lights"
         (click)="getQosById($event)">
     <h6> <i class="fa fa-info-circle  fa-lg "></i>
         <span class="d-none d-md-inline">Visualiser</span></h6>
@@ -15,7 +16,7 @@
 
 </div>
 
-<div *ngIf="selectedValue">
+<div style="margin-left: 80px;margin-bottom: 25px" *ngIf="selectedValue">
 
     <!-- code du tableau-->
         <table id="contentToConvert">

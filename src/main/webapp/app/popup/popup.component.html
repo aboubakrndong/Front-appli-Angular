@@ -1,37 +1,37 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"/>
 
-<h1 mat-dialog-title>Partager les infos
-    <button class="ohfermo " (click)="modalService.dismissAll()">
-    Close&times;</button>
+<h1 style="margin-left: 65px; margin-top: 10px"  mat-dialog-title><h3>Partager les informations
+    <button aria-label="Close" data-dismiss="modal" style="margin-left: 15px;" class="close" type="button" (click)="modalService.dismissAll()"><span aria-hidden="true">x</span>
+    </button> </h3>
 </h1>
-
-
-
-<div mat-dialog-content>
-    &nbsp;&nbsp;&nbsp; <p>Via:
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        Via: </p>
-
+<p></p>
+<p></p>
+<div style="margin-left: 65px">
+    <label for="uname">Lien :</label>
+    <input type="text" id="uname" name="name" value="http://localhost:9000/zones/1/view">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p>Via:</p>
 </div>
 
 <mat-dialog-actions>
-
-
-    <button class="btn btn-outline-danger btn-sm"
+<div style="margin-left: 65px; margin-top: 45px; margin-bottom: 35px">
+    <button class="btn btn-outline-info btn-sm"
             (click)="ShareWithEmail()">
-        <div style="font-size: 22px; margin-left: 15px; margin-right: 15px;">
+        <div style="font-size: 22px; margin-left: 10px; margin-right: 10px;">
             <i class="fa fa-envelope fa-3x"></i></div>
-        <span class="d-none d-md-inline"> mail</span>
-    </button>       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <span class="d-none d-md-inline"> Mail</span>
+    </button>
 
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <button class="btn btn-outline-info btn-sm"
             (click)="ShareWithSkype()">
-        <div style="font-size: 22px; margin-left: 15px ; margin-right: 15px">
+        <div style="font-size: 22px; margin-left: 10px ; margin-right: 10px">
             <i class="fa fa-skype fa-3x"></i></div>
         <span class="d-none d-md-inline"> Skype</span>
     </button>
+
+</div>
 
 </mat-dialog-actions>

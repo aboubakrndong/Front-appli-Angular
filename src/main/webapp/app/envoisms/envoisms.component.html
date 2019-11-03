@@ -1,7 +1,5 @@
-<div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-        <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
-            <div class="form-group">
+ <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+            <div class="form-groups">
                 <label for="destina">
                     Selectionner le destinataire
                 </label>
@@ -14,21 +12,19 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="form-groups">
                 <label for="msg">
                     Entrez le message
                 </label>
                 <input type="text" id="msg" class="form-control" name ="msg" ngModel >
             </div>
-<p></p>
             <p></p>
-            <div style="margin-top:70px ">
-            <button class="btn btn-primary" type="submit" [disabled]="f.invalid">Envoyer</button>
-
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="btn btn btn-danger" (click)="onClose()" type="submit" mat-dialog-close>Annuler</button>
+            <p></p>
+            <div style="margin-top:65px; ">
+            <button style="width: 150px" class="btn btn-primary"  type="submit" [disabled]="f.invalid">Envoyer</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button style="width: 150px" class="btn btn btn-danger" (click)="onClose()" type="submit" mat-dialog-close>Annuler</button>
             </div>
 
         </form>
-    </div>
-</div>
+

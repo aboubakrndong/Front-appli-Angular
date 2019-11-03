@@ -1,20 +1,20 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {IQos} from "app/shared/model/qos.model";
-import {IKpi} from "app/shared/model/kpi.model";
-import {IBts} from "app/shared/model/bts.model";
-import {IZones} from "app/shared/model/zones.model";
-import {MatDialog, MatTableDataSource} from "@angular/material";
-import {ZonesService} from "app/entities/zones";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {KpiService } from "app/entities/kpi";
-import {BtsService} from "app/entities/bts";
-
+import { Component, Input, OnInit } from '@angular/core';
+import { IQos } from 'app/shared/model/qos.model';
+import { IKpi } from 'app/shared/model/kpi.model';
+import { IBts } from 'app/shared/model/bts.model';
+import { IZones } from 'app/shared/model/zones.model';
+import { MatDialog, MatTableDataSource } from '@angular/material';
+import { ZonesService } from 'app/entities/zones';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { KpiService } from 'app/entities/kpi';
+import { BtsService } from 'app/entities/bts';
 
 export interface PeriodicElementBts {
   id?: number;
   type?: string;
   etat?: string;
-  puissance?:string;
+  puissance?: string;
+  bandedefrequence?: string;
 }
 
 @Component({
@@ -31,8 +31,13 @@ export class VuebtsComponent implements OnInit {
   selectedValue: number;
   dataSourceBts = new MatTableDataSource(this.ELEMENT_DATABTS);
 
-
-  constructor(private btsService: BtsService,public dialog: MatDialog,public undialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) { }
+  constructor(
+    private btsService: BtsService,
+    public dialog: MatDialog,
+    public undialog: MatDialog,
+    private zoneService: ZonesService,
+    private modalService: NgbModal
+  ) {}
 
   ngOnInit(): void {
     this.listbts = new Array<IBts>();
@@ -40,13 +45,10 @@ export class VuebtsComponent implements OnInit {
       console.log(liste.body);
       this.listbts = liste.body;
     });
-
   }
-
 
   getBtsById(event: any) {
     this.selectedValue = this.zone.id;
-
     this.btsService.find(this.selectedValue).subscribe(bts => {
       console.log(bts);
       this.bts = bts.body;
@@ -64,7 +66,6 @@ export class VuebtsComponent implements OnInit {
 
   getUneBtsById(event: any) {
     this.selectedValue = this.zone.id;
-
     this.btsService.find(this.selectedValue).subscribe(bts => {
       console.log(bts);
       this.bts = bts.body;
@@ -79,7 +80,4 @@ export class VuebtsComponent implements OnInit {
       this.dataSourceBts = new MatTableDataSource(this.ELEMENT_DATABTS);
     });
   }
-
-
-
 }

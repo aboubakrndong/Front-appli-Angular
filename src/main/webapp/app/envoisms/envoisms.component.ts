@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'jhi-envoisms',
@@ -15,7 +16,7 @@ export class EnvoismsComponent implements OnInit {
 
     window.open('http://localhost:13013/cgi-bin/sendsms?username=tester&password=foobar&to=' + destinataire + '&text=' + message);
   }
-  constructor() {}
+  constructor(private modalService: NgbModal) {}
 
   ngOnInit() {}
 
