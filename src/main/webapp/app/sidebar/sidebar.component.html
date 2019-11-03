@@ -3,7 +3,7 @@
 
 <!-- code des symbole et bouton side bar -->
 
-<nav class="navbar navbar-expand-lg navbar-light btn-success">
+<nav class="navbar navbar-expand-lg" id="monnav">
 
     <!-- debut code symbole sidebar  -->
 
@@ -17,30 +17,6 @@
     </button>
     <!-- fin code symbole sidebar-->
 
-
-<!-- debut code bouton date et rechercher-->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"> </ul>
-           <div style="margin-right: 14px">
-            <mat-form-field color="accent">
-                <input  matInput [matDatepicker]="picker1" placeholder="Choisissez date de début">
-                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
-                <mat-datepicker #picker1></mat-datepicker>
-            </mat-form-field>
-           </div>
-          <div style="margin-right: 14px; margin-left: 14px">
-              <mat-form-field color="warn">
-                <input matInput [matDatepicker]="picker2" placeholder=" Choisissez date de fin ">
-                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-                <mat-datepicker #picker2></mat-datepicker>
-             </mat-form-field>
-          </div>
-        <div style="margin-left: 25px">
-            <button class="btn btn-primary my-2 my-sm-0" type="submit">Rechercher </button>
-        </div>
-
-    </div>
-    <!-- fin code bouton date et rechercher-->
 </nav>
 
 
@@ -57,16 +33,9 @@
 
     <mat-sidenav #drawer mode="over"  opened="false" role="navigation" class="sidenav" fixedInViewport>
 
-        <div style="height: 60px" >
-        <!--<mat-toolbar >Choisissez une zone
-            <div style="margin-left: 80px;margin-bottom: 25px">
-            <button class="btn btn-outline-danger"
-                    (click)="drawer.close()">
-                <span>&times;</span>
-            </button></div>
-        </mat-toolbar>-->
+        <div style="height: 60px"  >
             <h4><mat-toolbar class="envoi" style="font-size: 21px"><strong>Choisissez une zone</strong>
-                <button class="btn btn-outline-danger" style="margin-left: 60px;" (click)="modalService.dismissAll()">
+                <button class="btn btn-outline-danger" style="margin-left: 60px;" (click)="drawer.close()">
                     &times;</button>
             </mat-toolbar></h4>
         </div>
@@ -91,16 +60,16 @@
                     <li class="list-group-item"> <strong>Nom Zone:</strong> {{ zone?.nomzone}}</li>
                     <li class="list-group-item"> <strong>Taux de Couverture: </strong> {{ zone?.couverture}}</li>
                     <li class="list-group-item"> <strong>Population:</strong> {{ zone?.population}}</li>
-                    <li class="list-group-item"> <strong>Cadastre: </strong>{{ zone?.cadastre}}</li>
+                    <li class="list-group-item"> <strong>Type de Réseau: </strong>{{ zone?.cadastre}}</li>
                 </ul>
                 </table>
             </cdk-virtual-scroll-viewport>
                         <p> </p>
 
-            &nbsp;&nbsp;<button [routerLink]="['/editzone']" class="btn btn-outline-info btn-sm">
+            &nbsp;&nbsp;        <button class="btn btn-outline-info btn-sm">
                              <fa-icon [icon]="'pencil-alt'"></fa-icon>
                             <span class="d-none d-md-inline">Modifier</span>
-                         </button>
+                      </button>
                       <button class="btn btn-outline-secondary btn-sm"
                             (click)="ConvertDataToPdf()">
                                <i class="fa fa-download fa-lg"></i>

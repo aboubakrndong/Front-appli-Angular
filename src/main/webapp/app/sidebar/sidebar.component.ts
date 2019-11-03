@@ -15,11 +15,11 @@ import * as html2canvas from 'html2canvas';
 import { PopupComponent } from 'app/popup/popup.component';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { EnvoismsComponent } from 'app/envoisms/envoisms.component';
-import {VuebtsComponent} from "app/vuebts/vuebts.component";
+import { VuebtsComponent } from 'app/vuebts/vuebts.component';
 
-import { BtsService} from "app/entities/bts";
-import {VuekpiComponent} from "app/vuekpi/vuekpi.component";
-import {VueqosComponent} from "app/vueqos/vueqos.component";
+import { BtsService } from 'app/entities/bts';
+import { VuekpiComponent } from 'app/vuekpi/vuekpi.component';
+import { VueqosComponent } from 'app/vueqos/vueqos.component';
 
 export interface PeriodicElement {
   id?: number;
@@ -31,7 +31,6 @@ export interface PeriodicElement {
   kpis?: IKpi[];
   bts?: IBts[];
 }
-
 
 @Component({
   selector: 'jhi-sidebar',
@@ -45,15 +44,14 @@ export class SidebarComponent implements OnInit {
   selectedValue: number;
   dataSource = new MatTableDataSource(this.ELEMENT_DATA);
 
-  constructor(public dialog: MatDialog,public undialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) {}
+  constructor(public dialog: MatDialog, public undialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.listzone = new Array<IZones>();
     this.zoneService.findAll().subscribe(liste => {
       console.log(liste.body);
       this.listzone = liste.body;
-  });
-
+    });
   }
   getZoneById(event: any) {
     this.zoneService.find(this.selectedValue).subscribe(zone => {
@@ -92,7 +90,7 @@ export class SidebarComponent implements OnInit {
   }
 
   ShareData() {
-    const modalRef: NgbModalRef = this.modalService.open(PopupComponent, { windowClass: 'create-modal',centered:true });
+    const modalRef: NgbModalRef = this.modalService.open(PopupComponent, { windowClass: 'create-modal', centered: true });
     modalRef.componentInstance.zone = this.zone;
   }
 
@@ -104,15 +102,17 @@ export class SidebarComponent implements OnInit {
   }
 
   AffichBts() {
-      const modalRef: NgbModalRef = this.modalService.open(VuebtsComponent, { windowClass: 'create-modal' , size:"lg"});
-      modalRef.componentInstance.zone = this.zone;
+    const modalRef: NgbModalRef = this.modalService.open(VuebtsComponent, { windowClass: 'create-modal', size: 'lg' });
+    modalRef.componentInstance.zone = this.zone;
   }
   AffichKpi() {
-    const modalRef: NgbModalRef = this.modalService.open(VuekpiComponent, { windowClass: 'create-modal' , size:"lg"});
+    const modalRef: NgbModalRef = this.modalService.open(VuekpiComponent, { windowClass: 'create-modal', size: 'lg' });
     modalRef.componentInstance.zone = this.zone;
   }
   AffichQos() {
-    const modalRef: NgbModalRef = this.modalService.open(VueqosComponent, { windowClass: 'create-modal' , size:"lg"});
+    const modalRef: NgbModalRef = this.modalService.open(VueqosComponent, {
+      windowClass: 'modal-adaptive'
+    });
     modalRef.componentInstance.zone = this.zone;
   }
 }

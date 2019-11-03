@@ -19,13 +19,13 @@ export class PopupComponent implements OnInit {
 
   ShareWithSkype() {
     let url = 'https://web.skype.com/';
-    window.open(url, 'sharer', 'status=0,toolbar=yes, alwaysOnTop=yes ,scrollbars=yes,resizable=yes,top=100,left=500,width=700,height=500');
+    window.open(url, 'sharer', 'status=0,toolbar=yes, alwaysOnTop=yes ,scrollbars=yes,resizable=yes,top=50,left=300,width=800,height=600');
     this.onClose();
   }
 
   ShareWithEmail() {
-    var msgbody = "bonjour Merci de bien vouloir me contacter";
-      /*"NomZone:" +
+    var msgbody = 'bonjour Merci de bien vouloir me contacter';
+    /*"NomZone:" +
       this.zone.nomzone +
       '' +
       'Couverture:' +
@@ -40,7 +40,7 @@ export class PopupComponent implements OnInit {
       '' +
       this.zone.cadastre;*/
     let url = 'https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=&su=Your+Subject+here&body=' + msgbody + '&ui=2&tf=1&pli=1';
-    window.open(url, 'sharer', 'status=0,toolbar=yes, alwaysOnTop=yes ,scrollbars=yes,resizable=yes,top=100,left=500,width=700,height=500');
+    window.open(url, 'sharer', 'status=0,toolbar=yes, alwaysOnTop=yes ,scrollbars=yes,resizable=yes,top=50,left=300,width=800,height=600');
     this.onClose();
   }
 

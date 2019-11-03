@@ -29,6 +29,8 @@ export class VuebtsComponent implements OnInit {
   ELEMENT_DATABTS: PeriodicElementBts[];
   bts: IBts;
   selectedValue: number;
+  toSelectedValue: number;
+
   dataSourceBts = new MatTableDataSource(this.ELEMENT_DATABTS);
 
   constructor(
@@ -48,6 +50,7 @@ export class VuebtsComponent implements OnInit {
   }
 
   getBtsById(event: any) {
+    this.toSelectedValue = 0;
     this.selectedValue = this.zone.id;
     this.btsService.find(this.selectedValue).subscribe(bts => {
       console.log(bts);
@@ -65,8 +68,10 @@ export class VuebtsComponent implements OnInit {
   }
 
   getUneBtsById(event: any) {
-    this.selectedValue = this.zone.id;
-    this.btsService.find(this.selectedValue).subscribe(bts => {
+    this.selectedValue = 0;
+
+    this.toSelectedValue = this.zone.id;
+    this.btsService.find(this.toSelectedValue).subscribe(bts => {
       console.log(bts);
       this.bts = bts.body;
       this.ELEMENT_DATABTS = [

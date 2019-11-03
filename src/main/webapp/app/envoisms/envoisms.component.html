@@ -1,22 +1,22 @@
- <form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+ <form (ngSubmit)="onSubmit(f)" #f="ngForm" class="leform" >
             <div class="form-groups">
                 <label for="destina">
                     Selectionner le destinataire
                 </label>
 
                 <select id="destina" class="form-control" name ="destina" [ngModel]="dest" required >
-                    <option value="764125780">Momodou</option>
-                    <option value="778692808">Ousmane</option>
-                    <option value="778692808">Michel</option>
-                    <option value="778692808">Adama</option>
+                    <option value="764125780">Momodou Faye</option>
+                    <option value="778692808">Ousmane Dieng</option>
+                    <option value="778692808">Michel Seck</option>
+                    <option value="778692808">Adama Ly</option>
                 </select>
             </div>
 
-            <div class="form-groups">
+            <div class="monform">
                 <label for="msg">
                     Entrez le message
                 </label>
-                <input type="text" id="msg" class="form-control" name ="msg" ngModel >
+                <textarea id="msg" name="msg" style="width:360px;height:70px;"></textarea>
             </div>
             <p></p>
             <p></p>

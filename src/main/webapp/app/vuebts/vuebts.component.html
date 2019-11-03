@@ -10,10 +10,11 @@
 <div style="margin-left: 80px; margin-top: 25px">
 <strong><p class="text-secondary"> Hauteur : 33.2 M </p></strong>
 <strong><p class="text-secondary"> Description du support : Immeuble / 35m / Copropriété</p></strong>
-<strong><p class="text-secondary"> Adresse : 678 AVENUE BLAISE DIAGNE/</p></strong>
+<strong><p class="text-secondary"> Adresse : 678 AVENUE BLAISE DIAGNE</p></strong>
 </div>
 
-<div style="margin-top: 70px;margin-bottom: 30px;margin-left: 80px;">
+
+<div style="margin-top: 60px;margin-bottom: 25px;margin-left: 80px;">
 
 <button style="width: 200px" class="btn btn-info btn-sm"
         (click)="getBtsById($event)">
@@ -21,7 +22,7 @@
         <span class="d-none d-md-inline">Antenne 1 </span></h6>
 </button>
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <button style="width: 200px" class="btn btn-info btn-sm"
         (click)="getUneBtsById($event)">
     <h6> <i class="fa fa-info-circle fa-lg "></i>
@@ -32,14 +33,26 @@
 
 <div *ngIf="selectedValue" style="margin-left: 80px;margin-top: 45px; margin-bottom: 25px">
 <!-- code du tableau-->
-
-        <table id="contentTo">
+        <table id="contentTo" style="width: 520px">
             <ul class="list-group">
-                <li class="list-group-item"> <strong>ID:</strong> {{ bts?.id}}</li>
-                <li class="list-group-item"> <strong>Type:</strong> {{ bts?.type}}</li>
-                <li class="list-group-item"> <strong>Etat: </strong> {{ bts?.etat}}</li>
-                <li class="list-group-item"> <strong>Puissance:</strong> {{ bts?.puissance}}</li>
-                <li class="list-group-item"> <strong>Bande de fréquences:</strong> 1959.9-2144.9 MHZ</li>
+                <li class="list-group-item"> <strong>ID: </strong> {{ bts?.id}} &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;1001</li>
+                <li class="list-group-item"> <strong>Type: </strong> {{ bts?.type}} &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UMTS 2100 (3G)</li>
+                <li class="list-group-item"> <strong>Orientation: </strong> {{ bts?.etat}}  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;150° 20° </li>
+                <li class="list-group-item"> <strong>Puissance: </strong> {{ bts?.puissance}}  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;202.18 W/ 45 dBm</li>
+                <li class="list-group-item"> <strong>Bande de fréquences: </strong>  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;   1959.9-2144.9 MHZ</li>
             </ul>
         </table>
+</div>
+
+<div *ngIf="toSelectedValue" style="margin-left: 80px;margin-top: 45px; margin-bottom: 25px">
+    <!-- code du tableau-->
+    <table id="tocontentTo" style="width: 520px">
+        <ul class="list-group">
+            <li class="list-group-item"> <strong>ID: </strong> {{ bts?.id}}&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;1002</li>
+            <li class="list-group-item"> <strong>Type: </strong> {{ bts?.type}}  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LTE 2600 (4G)</li>
+            <li class="list-group-item"> <strong>Orientation: </strong> {{ bts?.etat}}   &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;120° 240° </li>
+            <li class="list-group-item"> <strong>Puissance: </strong> {{ bts?.puissance}} &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;14.5 W/ 202 dBm</li>
+            <li class="list-group-item"> <strong>Bande de fréquences: </strong> &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;2655.0 - 2670.0MHz</li>
+        </ul>
+    </table>
 </div>
