@@ -192,6 +192,7 @@ import { VueqosComponent } from './vueqos/vueqos.component';
     VuekpiComponent,
     VueqosComponent,
 
+
   ],
   providers: [
     {

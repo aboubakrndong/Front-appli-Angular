@@ -1,21 +1,23 @@
 <nav class="navbar navbar-dark navbar-expand-md bg-dark">
+
     <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
-        <jhi-sidebar></jhi-sidebar>
-        <span jhiTranslate="global.title" class="navbar-title">Frontappli</span> <span class="navbar-version">{{version}}</span>
+        <button
+            type="button"
+            aria-label="Toggle sidenav"
+            mat-icon-button
+            >
+            <mat-icon class="unswap" aria-label="Side nav toggle icon">swap_horizontal_circle
+            </mat-icon>
+        </button>
     </a>
 
-    <a class="navbar-toggler d-lg-none" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
-        <fa-icon icon="bars"></fa-icon>
-    </a>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
 
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
-
-
             <li ngbDropdown class="nav-item dropdown pointer" placement="bottom-right" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="account-menu">
-                  <span *ngIf="!getImageUrl()">
+                  <span *ngIf="!getImageUrl()" class="compte">
                     <fa-icon icon="user"></fa-icon>
                     <span jhiTranslate="global.menu.account.main">
                       Account
@@ -63,7 +65,4 @@
 </nav>
 
 
-
-
-
-
+<jhi-sidebar></jhi-sidebar>

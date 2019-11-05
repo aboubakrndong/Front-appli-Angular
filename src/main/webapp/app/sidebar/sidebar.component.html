@@ -12,7 +12,7 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()">
-        <mat-icon aria-label="Side nav toggle icon">swap_horizontal_circle
+        <mat-icon class="swap" aria-label="Side nav toggle icon">swap_horizontal_circle
         </mat-icon>
     </button>
     <!-- fin code symbole sidebar-->
@@ -31,7 +31,7 @@
 <mat-sidenav-container class="sidenav-container">
 
 
-    <mat-sidenav #drawer mode="over"  opened="false" role="navigation" class="sidenav" fixedInViewport>
+    <mat-sidenav #drawer mode="over" opened="false" role="navigation" class="sidenav" fixedInViewport>
 
         <div style="height: 60px"  >
             <h4><mat-toolbar class="envoi" style="font-size: 21px"><strong>Choisissez une zone</strong>

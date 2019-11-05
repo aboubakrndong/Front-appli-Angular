@@ -1,19 +1,18 @@
-<!--
 <mgl-map class="mglmap"
          [style]="style"
          [zoom]="[6]"
          [center]="[-16.761909, 14.4682818]"
 >
-    &lt;!&ndash; code des boutons&ndash;&gt;
+    <!-- code des boutons-->
     
     <mgl-control mglFullscreen></mgl-control>
     <mgl-control mglNavigation></mgl-control>
     
-    &lt;!&ndash; fin code des boutons&ndash;&gt;
+    <!-- fin code des boutons-->
 
 
-    &lt;!&ndash; début code couleur sur la carte  &ndash;&gt;
-&lt;!&ndash; le vert &ndash;&gt;
+    <!-- début code couleur sur la carte  -->
+<!-- le vert -->
     <ng-container *ngIf="earthquakes">
         <mgl-geojson-source
             id="earthquakes"
@@ -43,9 +42,9 @@
         ></mgl-layer>
     </ng-container>
 
-    &lt;!&ndash; fin code le vert &ndash;&gt;
+    <!-- fin code le vert -->
 
-    &lt;!&ndash; debut code orange&ndash;&gt;
+    <!-- debut code orange-->
     <ng-container *ngIf="earthquakes">
         <mgl-geojson-source
             id="earthquakesor"
@@ -75,9 +74,9 @@
         ></mgl-layer>
     </ng-container>
 
-    &lt;!&ndash;fin code orange &ndash;&gt;
+    <!--fin code orange -->
 
-   &lt;!&ndash;debut code rouge&ndash;&gt;
+   <!--debut code rouge-->
     <ng-container *ngIf="earthquakes">
         <mgl-geojson-source
             id="earthquakesro"
@@ -107,11 +106,11 @@
         ></mgl-layer>
     </ng-container>
 
-   &lt;!&ndash; fin code rouge&ndash;&gt;
+   <!-- fin code rouge-->
 
 </mgl-map>
 
-   &lt;!&ndash; fin code couleur sur la map&ndash;&gt;
+   <!-- fin code couleur sur la map-->
 
 <mat-radio-group [ngModel]="layerId" (ngModelChange)="changeStyle($event)">
     <mat-label class="labelvue">  Choisir la vue : </mat-label>
@@ -119,4 +118,3 @@
     <mat-radio-button value="basic">Basic</mat-radio-button>
     <mat-radio-button value="satellite">Satellite</mat-radio-button>
 </mat-radio-group>
--->

@@ -11,16 +11,23 @@
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
+.compte{
+  color: white;
+  font-size: 20px;
+}
+
 .fermeqos {
   margin-left: 330px;
   color: white;
   background-color: red;
 }
+
 #authe {
+  margin-top: 10px;
   width: 124px;
   height: 124px;
   position: center;
-  margin-left: 205px;
+  margin-left: 180px;
 }
 
 #username {

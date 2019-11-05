@@ -52,7 +52,6 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           component:VueqosComponent
         },
 
-
         ...LAYOUT_ROUTES
       ],
       { enableTracing: DEBUG_INFO_ENABLED }

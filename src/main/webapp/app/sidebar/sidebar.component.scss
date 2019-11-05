@@ -1,6 +1,11 @@
+.swap{
+  color: black;
+  font-size: 40px;
+}
+
 #monnav {
-  color: white;
-  font-size: 30px;
+  color: black;
+  font-size: 50px;
 }
 
 .sidenav-container {
@@ -10,6 +15,8 @@
 .sidenav {
   width: 320px;
   box-shadow: 3px 0 6px rgba(0, 0, 0, 0.24);
+  margin-right: 80px;
+  position: center;
 }
 
 .container {
