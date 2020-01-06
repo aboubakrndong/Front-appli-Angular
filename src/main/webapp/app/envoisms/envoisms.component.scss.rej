@@ -1,0 +1,7 @@
+diff a/src/main/webapp/app/envoisms/envoisms.component.scss b/src/main/webapp/app/envoisms/envoisms.component.scss	(rejected hunks)
+@@ -1 +1 @@
+-.leform{
++.leform {
+@@ -5 +5 @@
+-.monform{
++.monform {

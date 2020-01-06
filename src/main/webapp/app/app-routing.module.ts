@@ -2,14 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { errorRoute, navbarRoute } from './layouts';
 import { DEBUG_INFO_ENABLED } from 'app/app.constants';
-import {CreatezoneComponent} from "app/createzone/createzone.component";
-import {PopupComponent} from "app/popup/popup.component";
-import {MainNavComponent} from "app/main-nav/main-nav.component";
-import {CreatealerteComponent} from "app/createalerte/createalerte.component";
-import {EnvoismsComponent} from "app/envoisms/envoisms.component";
-import {VuebtsComponent} from "app/vuebts/vuebts.component";
-import {VuekpiComponent} from "app/vuekpi/vuekpi.component";
-import {VueqosComponent} from "app/vueqos/vueqos.component";
+import { CreatezoneComponent } from 'app/createzone/createzone.component';
+import { PopupComponent } from 'app/popup/popup.component';
+import { MainNavComponent } from 'app/main-nav/main-nav.component';
+import { CreatealerteComponent } from 'app/createalerte/createalerte.component';
+import { EnvoismsComponent } from 'app/envoisms/envoisms.component';
+import { VuebtsComponent } from 'app/vuebts/vuebts.component';
+import { VuekpiComponent } from 'app/vuekpi/vuekpi.component';
+import { VueqosComponent } from 'app/vueqos/vueqos.component';
+import { SucceComponent } from 'app/succe/succe.component';
 
 const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
 
@@ -23,7 +24,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
         },
 
         {
-        path: 'createzone',
+          path: 'createzone',
           component: CreatezoneComponent
         },
         {
@@ -43,13 +44,16 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           component: VuebtsComponent
         },
         {
-          path:'affichkpi',
-          component:VuekpiComponent
+          path: 'affichkpi',
+          component: VuekpiComponent
         },
-
         {
-          path:'affichqos',
-          component:VueqosComponent
+          path: 'affichqos',
+          component: VueqosComponent
+        },
+        {
+          path: 'ok',
+          component: SucceComponent
         },
 
         ...LAYOUT_ROUTES

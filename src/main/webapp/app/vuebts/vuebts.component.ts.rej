@@ -1,0 +1,7 @@
+diff a/src/main/webapp/app/vuebts/vuebts.component.ts b/src/main/webapp/app/vuebts/vuebts.component.ts	(rejected hunks)
+@@ -53 +53 @@ export class VuebtsComponent implements OnInit {
+-    this.toSelectedValue =0;
++    this.toSelectedValue = 0;
+@@ -71 +71 @@ export class VuebtsComponent implements OnInit {
+-    this.selectedValue=0;
++    this.selectedValue = 0;

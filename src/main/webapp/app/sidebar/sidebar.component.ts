@@ -31,7 +31,6 @@ export interface PeriodicElement {
   kpis?: IKpi[];
   bts?: IBts[];
 }
-
 @Component({
   selector: 'jhi-sidebar',
   templateUrl: './sidebar.component.html',

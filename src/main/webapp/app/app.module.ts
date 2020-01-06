@@ -86,6 +86,7 @@ import { EnvoismsComponent } from './envoisms/envoisms.component';
 import { VuebtsComponent } from './vuebts/vuebts.component';
 import { VuekpiComponent } from './vuekpi/vuekpi.component';
 import { VueqosComponent } from './vueqos/vueqos.component';
+import { SucceComponent } from './succe/succe.component';
 
 @NgModule({
   imports: [
@@ -191,8 +192,7 @@ import { VueqosComponent } from './vueqos/vueqos.component';
     VuebtsComponent,
     VuekpiComponent,
     VueqosComponent,
-
-
+    SucceComponent
   ],
   providers: [
     {

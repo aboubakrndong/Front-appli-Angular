@@ -22,7 +22,6 @@ export interface PeriodicElementKpi {
 })
 export class VuekpiComponent implements OnInit {
   @Input() zone: IZones;
-
   listkpi: IKpi[];
   ELEMENT_DATAKPI: PeriodicElementKpi[];
   kpi: IKpi;
@@ -46,7 +45,6 @@ export class VuekpiComponent implements OnInit {
       this.listkpi = liste.body;
     });
   }
-
   getKpiById(event: any) {
     this.toselectedValue = 0;
     this.selectedValue = this.zone.id;
@@ -65,7 +63,6 @@ export class VuekpiComponent implements OnInit {
       this.dataSourceKpi = new MatTableDataSource(this.ELEMENT_DATAKPI);
     });
   }
-
   getSmsById(unevent: any) {
     this.selectedValue = 0;
     this.toselectedValue = this.zone.id;

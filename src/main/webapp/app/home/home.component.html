@@ -10,7 +10,6 @@
     
     <!-- fin code des boutons-->
 
-
     <!-- début code couleur sur la carte  -->
 <!-- le vert -->
     <ng-container *ngIf="earthquakes">
@@ -117,4 +116,10 @@
     <mat-radio-button value="dark">Dark</mat-radio-button>
     <mat-radio-button value="basic">Basic</mat-radio-button>
     <mat-radio-button value="satellite">Satellite</mat-radio-button>
+
+    <button class="btn btn-sm"
+            (click)="Succes()" style="margin-left: 30px">
+        <span class="d-none d-md-inline"></span>
+    </button>
+
 </mat-radio-group>

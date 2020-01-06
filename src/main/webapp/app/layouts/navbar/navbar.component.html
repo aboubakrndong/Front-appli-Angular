@@ -1,15 +1,6 @@
 <nav class="navbar navbar-dark navbar-expand-md bg-dark">
 
-    <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
-        <button
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
-            >
-            <mat-icon class="unswap" aria-label="Side nav toggle icon">swap_horizontal_circle
-            </mat-icon>
-        </button>
-    </a>
+
 
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">

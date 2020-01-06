@@ -1,0 +1,40 @@
+diff a/src/main/webapp/app/vuekpi/vuekpi.component.ts b/src/main/webapp/app/vuekpi/vuekpi.component.ts	(rejected hunks)
+@@ -1,10 +1,9 @@
+-import {Component, Input, OnInit} from '@angular/core';
+-import {IQos} from "app/shared/model/qos.model";
+-import {IKpi} from "app/shared/model/kpi.model";
+-import {IBts} from "app/shared/model/bts.model";
+-import {IZones} from "app/shared/model/zones.model";
+-import {MatDialog, MatTableDataSource} from "@angular/material";
+-import {ZonesService} from "app/entities/zones";
+-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+-import {KpiService } from "app/entities/kpi";
+-
++import { Component, Input, OnInit } from '@angular/core';
++import { IQos } from 'app/shared/model/qos.model';
++import { IKpi } from 'app/shared/model/kpi.model';
++import { IBts } from 'app/shared/model/bts.model';
++import { IZones } from 'app/shared/model/zones.model';
++import { MatDialog, MatTableDataSource } from '@angular/material';
++import { ZonesService } from 'app/entities/zones';
++import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
++import { KpiService } from 'app/entities/kpi';
+@@ -16 +15 @@ export interface PeriodicElementKpi {
+-  tauxderejets?:string;
++  tauxderejets?: string;
+@@ -36,2 +34,7 @@ export class VuekpiComponent implements OnInit {
+-
+-  constructor(private kpiService: KpiService,public dialog: MatDialog,public undialog: MatDialog, private zoneService: ZonesService, private modalService: NgbModal) { }
++  constructor(
++    private kpiService: KpiService,
++    public dialog: MatDialog,
++    public undialog: MatDialog,
++    private zoneService: ZonesService,
++    private modalService: NgbModal
++  ) {}
+@@ -49 +51 @@ export class VuekpiComponent implements OnInit {
+-    this.toselectedValue =0;
++    this.toselectedValue = 0;
+@@ -68 +70 @@ export class VuekpiComponent implements OnInit {
+-   this.selectedValue =0;
++    this.selectedValue = 0;
